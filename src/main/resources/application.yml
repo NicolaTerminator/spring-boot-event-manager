@@ -1,0 +1,35 @@
+jwt:
+  app:
+    jwtExpirationMs: '86400000'
+    jwtCookieName: nicola
+    jwtSecret: ae7f3954fe7102917e602b73c1bf3551653e60cb7c89ac1139eefc302ede4f41
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: 'true'
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ibee
+    username: sa
+    url: jdbc:h2:mem:emapp
+  h2:
+    console:
+      settings:
+        trace: 'false'
+        web-allow-others: 'false'
+      path: /h2-console
+      enabled: 'true'
+  sql:
+    init:
+      mode: always
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    operationsSorter: method
+    path: /swagger-ui-custom.html
